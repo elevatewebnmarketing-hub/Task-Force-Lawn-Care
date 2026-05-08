@@ -69,11 +69,18 @@ function ContactPage() {
             <Typography variant="h4" sx={{ mb: 2.5 }}>
               Areas Served
             </Typography>
-            <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap" sx={{ minWidth: 0 }}>
+            <Box
+              sx={{
+                minWidth: 0,
+                display: "grid",
+                gridTemplateColumns: { xs: "1fr", sm: "repeat(2, minmax(0, 1fr))" },
+                gap: 1,
+              }}
+            >
               {serviceArea.map((town) => (
-                <Chip key={town} label={`${town}, MA`} variant="outlined" />
+                <Chip key={town} label={`${town}, MA`} variant="outlined" sx={{ width: "100%", justifyContent: "center" }} />
               ))}
-            </Stack>
+            </Box>
           </CardContent>
         </Card>
       </Box>

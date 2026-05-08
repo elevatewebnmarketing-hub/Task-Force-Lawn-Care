@@ -305,11 +305,24 @@ function HomePage() {
             />
             <Typography variant="h2">Serving Wareham and nearby South Coast communities.</Typography>
           </Stack>
-          <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap" sx={{ maxWidth: 860, minWidth: 0 }}>
+          <Box
+            sx={{
+              maxWidth: 860,
+              minWidth: 0,
+              display: "grid",
+              gridTemplateColumns: { xs: "1fr", sm: "repeat(2, minmax(0, 1fr))", md: "repeat(3, minmax(0, 1fr))" },
+              gap: 1,
+            }}
+          >
             {serviceArea.map((town) => (
-              <Chip key={town} label={`${town}, MA`} variant="outlined" sx={{ bgcolor: "background.paper" }} />
+              <Chip
+                key={town}
+                label={`${town}, MA`}
+                variant="outlined"
+                sx={{ bgcolor: "background.paper", width: "100%", justifyContent: "center" }}
+              />
             ))}
-          </Stack>
+          </Box>
         </Container>
       </Box>
     </>
