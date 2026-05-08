@@ -14,9 +14,9 @@ import { coreServices, phoneDisplay, phoneHref } from "../siteData";
 function ServicesPage() {
   return (
     <Container maxWidth="lg" sx={{ py: { xs: 5, md: 8 }, px: { xs: 2, sm: 3 } }}>
-      <Stack spacing={1.5} sx={{ mb: 4.5, maxWidth: 860 }}>
-        <Chip label="Services" sx={{ width: "fit-content", bgcolor: "secondary.light", fontWeight: 700 }} />
-        <Typography variant="h1" sx={{ fontSize: { xs: "2.25rem", md: "3.75rem" } }}>
+      <Stack spacing={1.5} sx={{ mb: 4.5, maxWidth: 860, minWidth: 0 }}>
+        <Chip label="Services" sx={{ width: { xs: "100%", sm: "fit-content" }, bgcolor: "secondary.light", fontWeight: 700 }} />
+        <Typography variant="h1" sx={{ fontSize: { xs: "2rem", sm: "2.25rem", md: "3.75rem" } }}>
           Lawn care services built for repeat business and clean presentation.
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.85 }}>
@@ -34,9 +34,9 @@ function ServicesPage() {
         }}
       >
         {coreServices.map((service) => (
-          <Card key={service.title}>
+          <Card key={service.title} sx={{ minWidth: 0 }}>
             <CardContent sx={{ p: { xs: 2.25, sm: 3.5 } }}>
-              <Stack direction="row" spacing={1.5} alignItems="center" sx={{ mb: 2 }}>
+              <Stack direction="row" spacing={1.5} alignItems="center" sx={{ mb: 2, minWidth: 0 }}>
                 <Box
                   sx={{
                     width: 50,
@@ -49,7 +49,7 @@ function ServicesPage() {
                 >
                   <BuildCircleOutlinedIcon color="primary" />
                 </Box>
-                <Typography variant="h4" sx={{ fontSize: { xs: "1.35rem", md: "1.55rem" } }}>
+                <Typography variant="h4" sx={{ fontSize: { xs: "1.1rem", sm: "1.35rem", md: "1.55rem" }, minWidth: 0 }}>
                   {service.title}
                 </Typography>
               </Stack>
@@ -59,7 +59,7 @@ function ServicesPage() {
               <Stack spacing={1.25}>
                 {service.details.map((detail) => (
                   <Typography key={detail} variant="body2" color="text.secondary">
-                    • {detail}
+                    {"\u2022"} {detail}
                   </Typography>
                 ))}
               </Stack>

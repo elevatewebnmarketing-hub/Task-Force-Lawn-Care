@@ -1,6 +1,6 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
-const theme = createTheme({
+let theme = createTheme({
   palette: {
     primary: {
       main: "#355f18",
@@ -30,11 +30,13 @@ const theme = createTheme({
       fontFamily: '"Bitter", serif',
       fontWeight: 700,
       lineHeight: 1.08,
+      fontSize: "3.6rem",
     },
     h2: {
       fontFamily: '"Bitter", serif',
       fontWeight: 700,
       lineHeight: 1.12,
+      fontSize: "2.6rem",
     },
     h3: {
       fontFamily: '"Bitter", serif',
@@ -128,9 +130,17 @@ const theme = createTheme({
         img: {
           maxWidth: "100%",
         },
+        ".MuiTypography-root": {
+          overflowWrap: "anywhere",
+        },
       },
     },
   },
+});
+
+theme = responsiveFontSizes(theme, {
+  breakpoints: ["xs", "sm", "md", "lg"],
+  factor: 2.4,
 });
 
 export default theme;

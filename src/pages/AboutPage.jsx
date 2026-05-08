@@ -4,9 +4,9 @@ import { aboutBullets } from "../siteData";
 function AboutPage() {
   return (
     <Container maxWidth="lg" sx={{ py: { xs: 5, md: 8 }, px: { xs: 2, sm: 3 } }}>
-      <Stack spacing={1.5} sx={{ mb: 4.5, maxWidth: 860 }}>
-        <Chip label="About" sx={{ width: "fit-content", bgcolor: "secondary.light", fontWeight: 700 }} />
-        <Typography variant="h1" sx={{ fontSize: { xs: "2.25rem", md: "3.75rem" } }}>
+      <Stack spacing={1.5} sx={{ mb: 4.5, maxWidth: 860, minWidth: 0 }}>
+        <Chip label="About" sx={{ width: { xs: "100%", sm: "fit-content" }, bgcolor: "secondary.light", fontWeight: 700 }} />
+        <Typography variant="h1" sx={{ fontSize: { xs: "2rem", sm: "2.25rem", md: "3.75rem" } }}>
           A dependable local lawn care company serving the South Coast.
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.85 }}>
@@ -23,7 +23,7 @@ function AboutPage() {
           alignItems: "stretch",
         }}
       >
-        <Card>
+        <Card sx={{ minWidth: 0 }}>
           <CardContent sx={{ p: { xs: 2.25, sm: 3.5 } }}>
             <Typography variant="h4" sx={{ mb: 2 }}>
               What the company focuses on
@@ -41,7 +41,7 @@ function AboutPage() {
           </CardContent>
         </Card>
 
-        <Card sx={{ overflow: "hidden" }}>
+        <Card sx={{ overflow: "hidden", minWidth: 0 }}>
           <CardMedia
             component="img"
             image="/images/grass-texture-detail.png"

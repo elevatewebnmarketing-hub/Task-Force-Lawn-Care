@@ -13,9 +13,9 @@ import { projectHighlights } from "../siteData";
 function ProjectsPage() {
   return (
     <Container maxWidth="lg" sx={{ py: { xs: 5, md: 8 }, px: { xs: 2, sm: 3 } }}>
-      <Stack spacing={1.5} sx={{ mb: 4.5, maxWidth: 860 }}>
-        <Chip label="Projects" sx={{ width: "fit-content", bgcolor: "secondary.light", fontWeight: 700 }} />
-        <Typography variant="h1" sx={{ fontSize: { xs: "2.25rem", md: "3.75rem" } }}>
+      <Stack spacing={1.5} sx={{ mb: 4.5, maxWidth: 860, minWidth: 0 }}>
+        <Chip label="Projects" sx={{ width: { xs: "100%", sm: "fit-content" }, bgcolor: "secondary.light", fontWeight: 700 }} />
+        <Typography variant="h1" sx={{ fontSize: { xs: "2rem", sm: "2.25rem", md: "3.75rem" } }}>
           Representative property care projects and presentation-focused lawn work.
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.85 }}>
@@ -32,7 +32,7 @@ function ProjectsPage() {
         }}
       >
         {projectHighlights.map((project) => (
-          <Card key={project.title} sx={{ overflow: "hidden" }}>
+          <Card key={project.title} sx={{ overflow: "hidden", minWidth: 0 }}>
             <CardMedia
               component="img"
               image={project.image}
@@ -43,9 +43,9 @@ function ProjectsPage() {
               <Chip
                 label={project.location}
                 size="small"
-                sx={{ mb: 2, bgcolor: "rgba(53,95,24,0.08)", color: "primary.dark", fontWeight: 700 }}
+                sx={{ mb: 2, bgcolor: "rgba(53,95,24,0.08)", color: "primary.dark", fontWeight: 700, maxWidth: "100%" }}
               />
-              <Typography variant="h4" sx={{ mb: 1.25, fontSize: "1.4rem" }}>
+              <Typography variant="h4" sx={{ mb: 1.25, fontSize: { xs: "1.12rem", sm: "1.4rem" } }}>
                 {project.title}
               </Typography>
               <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8, mb: 2 }}>

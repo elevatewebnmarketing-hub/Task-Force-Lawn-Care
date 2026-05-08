@@ -46,7 +46,7 @@ function HomePage() {
               alignItems: "center",
             }}
           >
-            <Box>
+            <Box sx={{ minWidth: 0 }}>
               <Chip
                 label="Residential And Small Commercial Lawn Care"
                 sx={{
@@ -57,10 +57,14 @@ function HomePage() {
                   maxWidth: { xs: "100%", sm: "fit-content" },
                 }}
               />
-              <Typography variant="h1" sx={{ fontSize: { xs: "2.25rem", md: "3.9rem" }, maxWidth: 740 }}>
+              <Typography variant="h1" sx={{ fontSize: { xs: "2rem", sm: "2.35rem", md: "3.9rem" }, maxWidth: 740 }}>
                 Professional lawn care that keeps your property looking sharp.
               </Typography>
-              <Typography variant="body1" color="text.secondary" sx={{ mt: 2.5, maxWidth: 700, lineHeight: 1.8 }}>
+              <Typography
+                variant="body1"
+                color="text.secondary"
+                sx={{ mt: 2.5, maxWidth: 700, lineHeight: { xs: 1.7, sm: 1.8 }, fontSize: { xs: "0.98rem", sm: "1rem" } }}
+              >
                 Task Force Lawn Care, LLC serves South Coast Massachusetts with routine
                 mowing, trimming, edging, seasonal cleanups, and dependable ongoing
                 property maintenance.
@@ -86,7 +90,7 @@ function HomePage() {
                 sx={{
                   mt: 4,
                   display: "grid",
-                  gridTemplateColumns: { xs: "1fr", sm: "repeat(3, 1fr)" },
+                  gridTemplateColumns: { xs: "1fr", md: "repeat(3, 1fr)" },
                   gap: 2,
                 }}
               >
@@ -95,7 +99,7 @@ function HomePage() {
                   ["Core Focus", "Mowing, edging, trimming, cleanups, maintenance"],
                   ["Contact Path", "Direct phone and email quote requests"],
                 ].map(([title, text]) => (
-                  <Card key={title}>
+                  <Card key={title} sx={{ minWidth: 0 }}>
                     <CardContent sx={{ p: { xs: 2, sm: 2.5 } }}>
                       <Typography variant="h6" sx={{ fontSize: "1rem", mb: 1 }}>
                         {title}
@@ -109,7 +113,7 @@ function HomePage() {
               </Box>
             </Box>
 
-            <Card sx={{ overflow: "hidden", borderRadius: 4 }}>
+            <Card sx={{ overflow: "hidden", borderRadius: 4, minWidth: 0 }}>
               <CardMedia
                 component="img"
                 image="/images/lawn-crew-hero.png"
@@ -122,8 +126,8 @@ function HomePage() {
       </Box>
 
       <Container maxWidth="lg" sx={{ py: { xs: 5, md: 8 }, px: { xs: 2, sm: 3 } }}>
-        <Stack spacing={1.5} sx={{ mb: 4 }}>
-          <Chip label="Core Services" sx={{ width: "fit-content", bgcolor: "secondary.light", fontWeight: 700 }} />
+        <Stack spacing={1.5} sx={{ mb: 4, minWidth: 0 }}>
+          <Chip label="Core Services" sx={{ width: { xs: "100%", sm: "fit-content" }, bgcolor: "secondary.light", fontWeight: 700 }} />
           <Typography variant="h2" sx={{ maxWidth: 820 }}>
             Focused services that are easy to understand and easy to book.
           </Typography>
@@ -138,7 +142,7 @@ function HomePage() {
           {coreServices.map((service, index) => {
             const Icon = icons[index];
             return (
-              <Card key={service.title}>
+              <Card key={service.title} sx={{ minWidth: 0 }}>
                 <CardContent sx={{ p: { xs: 2.25, sm: 3 } }}>
                   <Box
                     sx={{
@@ -153,7 +157,7 @@ function HomePage() {
                   >
                     <Icon color="primary" />
                   </Box>
-                  <Typography variant="h5" sx={{ mb: 1.25, fontSize: "1.25rem" }}>
+                  <Typography variant="h5" sx={{ mb: 1.25, fontSize: { xs: "1.12rem", sm: "1.25rem" } }}>
                     {service.title}
                   </Typography>
                   <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.8, mb: 2 }}>
@@ -186,7 +190,7 @@ function HomePage() {
               alignItems: "center",
             }}
           >
-            <Card sx={{ overflow: "hidden", borderRadius: 4 }}>
+            <Card sx={{ overflow: "hidden", borderRadius: 4, minWidth: 0 }}>
               <CardMedia
                 component="img"
                 image="/images/suburban-yard-cleanup.png"
@@ -245,8 +249,8 @@ function HomePage() {
       </Box>
 
       <Container maxWidth="lg" sx={{ py: { xs: 5, md: 8 }, px: { xs: 2, sm: 3 } }}>
-        <Stack spacing={1.5} sx={{ mb: 4 }}>
-          <Chip label="How It Works" sx={{ width: "fit-content", bgcolor: "secondary.light", fontWeight: 700 }} />
+        <Stack spacing={1.5} sx={{ mb: 4, minWidth: 0 }}>
+          <Chip label="How It Works" sx={{ width: { xs: "100%", sm: "fit-content" }, bgcolor: "secondary.light", fontWeight: 700 }} />
           <Typography variant="h2">A straightforward quote-to-service process.</Typography>
         </Stack>
         <Box
@@ -257,7 +261,7 @@ function HomePage() {
           }}
         >
           {processSteps.map((item) => (
-            <Card key={item.step}>
+            <Card key={item.step} sx={{ minWidth: 0 }}>
               <CardContent sx={{ p: { xs: 2.25, sm: 3 } }}>
                 <Box
                   sx={{
@@ -275,7 +279,7 @@ function HomePage() {
                 >
                   {item.step}
                 </Box>
-                <Typography variant="h5" sx={{ mb: 1, fontSize: "1.3rem" }}>
+                <Typography variant="h5" sx={{ mb: 1, fontSize: { xs: "1.12rem", sm: "1.3rem" } }}>
                   {item.title}
                 </Typography>
                 <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.8 }}>
@@ -289,11 +293,19 @@ function HomePage() {
 
       <Box sx={{ bgcolor: "#f3f6ee", borderTop: "1px solid rgba(29,59,20,0.08)", borderBottom: "1px solid rgba(29,59,20,0.08)" }}>
         <Container maxWidth="lg" sx={{ py: { xs: 5, md: 7 }, px: { xs: 2, sm: 3 } }}>
-          <Stack spacing={1.5} sx={{ mb: 3.5 }}>
-            <Chip label="Service Area" sx={{ width: "fit-content", bgcolor: "rgba(53,95,24,0.08)", color: "primary.dark", fontWeight: 700 }} />
+          <Stack spacing={1.5} sx={{ mb: 3.5, minWidth: 0 }}>
+            <Chip
+              label="Service Area"
+              sx={{
+                width: { xs: "100%", sm: "fit-content" },
+                bgcolor: "rgba(53,95,24,0.08)",
+                color: "primary.dark",
+                fontWeight: 700,
+              }}
+            />
             <Typography variant="h2">Serving Wareham and nearby South Coast communities.</Typography>
           </Stack>
-          <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap" sx={{ maxWidth: 860 }}>
+          <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap" sx={{ maxWidth: 860, minWidth: 0 }}>
             {serviceArea.map((town) => (
               <Chip key={town} label={`${town}, MA`} variant="outlined" sx={{ bgcolor: "background.paper" }} />
             ))}
