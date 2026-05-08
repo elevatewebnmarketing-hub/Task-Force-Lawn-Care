@@ -1,3 +1,20 @@
+import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
+import AssignmentTurnedInOutlinedIcon from "@mui/icons-material/AssignmentTurnedInOutlined";
+import ContentCutOutlinedIcon from "@mui/icons-material/ContentCutOutlined";
+import GrassOutlinedIcon from "@mui/icons-material/GrassOutlined";
+import HomeWorkOutlinedIcon from "@mui/icons-material/HomeWorkOutlined";
+import ParkOutlinedIcon from "@mui/icons-material/ParkOutlined";
+import {
+  Box,
+  Button,
+  Card,
+  CardContent,
+  CardMedia,
+  Chip,
+  Container,
+  Stack,
+  Typography,
+} from "@mui/material";
 import { Link } from "react-router-dom";
 import {
   coreServices,
@@ -8,133 +25,254 @@ import {
   phoneHref,
 } from "../siteData";
 
+const icons = [GrassOutlinedIcon, ContentCutOutlinedIcon, ParkOutlinedIcon, HomeWorkOutlinedIcon];
+
 function HomePage() {
   return (
     <>
-      <section className="hero-section">
-        <div className="container hero-grid">
-          <div className="hero-content">
-            <p className="eyebrow">Reliable Residential And Small Commercial Lawn Care</p>
-            <h1>Traditional lawn care service, presented like a real local business.</h1>
-            <p className="lead">
-              Task Force Lawn Care, LLC helps South Coast Massachusetts property owners
-              keep lawns sharp with routine mowing, trimming, edging, seasonal cleanups,
-              and ongoing property maintenance.
-            </p>
-            <div className="hero-actions">
-              <a className="button button-primary" href={phoneHref}>
-                Call {phoneDisplay}
-              </a>
-              <Link className="button button-secondary" to="/services">
-                View Services
-              </Link>
-            </div>
-            <div className="trust-grid">
-              <article>
-                <strong>Service Area</strong>
-                <span>Wareham and surrounding South Coast towns</span>
-              </article>
-              <article>
-                <strong>Core Focus</strong>
-                <span>Mowing, edging, trimming, cleanups, maintenance</span>
-              </article>
-              <article>
-                <strong>Contact Path</strong>
-                <span>Simple phone and email quote requests</span>
-              </article>
-            </div>
-          </div>
+      <Box
+        sx={{
+          background:
+            "linear-gradient(180deg, rgba(239,224,169,0.24), rgba(255,255,255,0) 42%), linear-gradient(180deg, #fffdf8 0%, #f4f7ef 100%)",
+          borderBottom: "1px solid rgba(29,59,20,0.08)",
+        }}
+      >
+        <Container maxWidth="xl" sx={{ py: { xs: 6, md: 10 } }}>
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: { xs: "1fr", md: "1.05fr 0.95fr" },
+              gap: { xs: 4, md: 6 },
+              alignItems: "center",
+            }}
+          >
+            <Box>
+              <Chip
+                label="Reliable Residential And Small Commercial Lawn Care"
+                sx={{ mb: 2, bgcolor: "rgba(53,95,24,0.08)", color: "primary.dark", fontWeight: 800 }}
+              />
+              <Typography variant="h1" sx={{ fontSize: { xs: "2.5rem", md: "4.6rem" }, maxWidth: 760 }}>
+                A cleaner, more professional site built on a proper UI system.
+              </Typography>
+              <Typography variant="body1" color="text.secondary" sx={{ mt: 2.5, maxWidth: 720, lineHeight: 1.85 }}>
+                Task Force Lawn Care, LLC helps South Coast Massachusetts property owners
+                keep lawns sharp with routine mowing, trimming, edging, seasonal cleanups,
+                and ongoing property maintenance.
+              </Typography>
+              <Stack direction={{ xs: "column", sm: "row" }} spacing={1.5} sx={{ mt: 4 }}>
+                <Button href={phoneHref} variant="contained" size="large">
+                  Call {phoneDisplay}
+                </Button>
+                <Button
+                  component={Link}
+                  to="/services"
+                  variant="outlined"
+                  color="primary"
+                  endIcon={<ArrowForwardRoundedIcon />}
+                  size="large"
+                >
+                  View Services
+                </Button>
+              </Stack>
 
-          <div className="hero-media">
-            <img
-              src="/images/lawn-crew-hero.png"
-              alt="Striped lawn outside a coastal Massachusetts home"
-            />
-          </div>
-        </div>
-      </section>
+              <Box
+                sx={{
+                  mt: 4.5,
+                  display: "grid",
+                  gridTemplateColumns: { xs: "1fr", sm: "repeat(3, 1fr)" },
+                  gap: 2,
+                }}
+              >
+                {[
+                  ["Service Area", "Wareham and surrounding South Coast towns"],
+                  ["Core Focus", "Mowing, edging, trimming, cleanups, maintenance"],
+                  ["Contact Path", "Simple phone and email quote requests"],
+                ].map(([title, text]) => (
+                  <Card key={title}>
+                    <CardContent sx={{ p: 2.5 }}>
+                      <Typography variant="h6" sx={{ fontSize: "1rem", mb: 1 }}>
+                        {title}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.7 }}>
+                        {text}
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                ))}
+              </Box>
+            </Box>
 
-      <section className="section">
-        <div className="container">
-          <div className="section-heading">
-            <p className="eyebrow">Core Services</p>
-            <h2>Focused service offerings that are easy to understand and easy to book.</h2>
-          </div>
-          <div className="card-grid four-up">
-            {coreServices.map((service) => (
-              <article className="info-card" key={service.title}>
-                <h3>{service.title}</h3>
-                <p>{service.summary}</p>
-                <ul className="clean-list">
-                  {service.details.map((detail) => (
-                    <li key={detail}>{detail}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+            <Card sx={{ overflow: "hidden", borderRadius: { xs: 4, md: 6 } }}>
+              <CardMedia
+                component="img"
+                image="/images/lawn-crew-hero.png"
+                alt="Striped lawn outside a coastal Massachusetts home"
+                sx={{ minHeight: { xs: 260, md: 560 }, objectFit: "cover" }}
+              />
+            </Card>
+          </Box>
+        </Container>
+      </Box>
 
-      <section className="section section-alt">
-        <div className="container split-section">
-          <div className="split-media">
-            <img
-              src="/images/suburban-yard-cleanup.png"
-              alt="Well maintained yard with edging and cleanup work"
-            />
-          </div>
-          <div className="split-content">
-            <p className="eyebrow">Why This Works Better</p>
-            <h2>A cleaner structure, more detail, and a more standard contractor-site layout.</h2>
-            <p>
-              The site now emphasizes business credibility instead of social metrics. That
-              means clearer navigation, deeper service descriptions, dedicated project
-              examples, and multiple pages that make the company feel more established.
-            </p>
-            <div className="check-list">
-              {reasonsToChoose.map((reason) => (
-                <div className="check-item" key={reason}>
-                  <span />
-                  <p>{reason}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <Container maxWidth="xl" sx={{ py: { xs: 6, md: 9 } }}>
+        <Stack spacing={1.5} sx={{ mb: 4 }}>
+          <Chip label="Core Services" sx={{ width: "fit-content", bgcolor: "secondary.light", fontWeight: 800 }} />
+          <Typography variant="h2" sx={{ maxWidth: 840 }}>
+            Focused service offerings that are easy to understand and easy to book.
+          </Typography>
+        </Stack>
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", xl: "repeat(4, 1fr)" },
+            gap: 2.5,
+          }}
+        >
+          {coreServices.map((service, index) => {
+            const Icon = icons[index];
+            return (
+              <Card key={service.title}>
+                <CardContent sx={{ p: 3 }}>
+                  <Box
+                    sx={{
+                      width: 52,
+                      height: 52,
+                      borderRadius: 999,
+                      bgcolor: "rgba(53,95,24,0.1)",
+                      display: "grid",
+                      placeItems: "center",
+                      mb: 2,
+                    }}
+                  >
+                    <Icon color="primary" />
+                  </Box>
+                  <Typography variant="h5" sx={{ mb: 1.25, fontSize: "1.3rem" }}>
+                    {service.title}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.8, mb: 2 }}>
+                    {service.summary}
+                  </Typography>
+                  <Stack spacing={1}>
+                    {service.details.map((detail) => (
+                      <Stack
+                        key={detail}
+                        direction="row"
+                        spacing={1}
+                        alignItems="flex-start"
+                      >
+                        <AssignmentTurnedInOutlinedIcon color="secondary" fontSize="small" sx={{ mt: 0.2 }} />
+                        <Typography variant="body2" color="text.secondary">
+                          {detail}
+                        </Typography>
+                      </Stack>
+                    ))}
+                  </Stack>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </Box>
+      </Container>
 
-      <section className="section">
-        <div className="container">
-          <div className="section-heading">
-            <p className="eyebrow">How It Works</p>
-            <h2>A straightforward quote-to-service process.</h2>
-          </div>
-          <div className="card-grid three-up">
-            {processSteps.map((item) => (
-              <article className="step-card" key={item.step}>
-                <span>{item.step}</span>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Box sx={{ bgcolor: "#f2f6ec", borderTop: "1px solid rgba(29,59,20,0.08)", borderBottom: "1px solid rgba(29,59,20,0.08)" }}>
+        <Container maxWidth="xl" sx={{ py: { xs: 6, md: 9 } }}>
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: { xs: "1fr", md: "0.96fr 1.04fr" },
+              gap: { xs: 4, md: 4 },
+              alignItems: "center",
+            }}
+          >
+            <Card sx={{ overflow: "hidden", borderRadius: { xs: 4, md: 6 } }}>
+              <CardMedia
+                component="img"
+                image="/images/suburban-yard-cleanup.png"
+                alt="Well maintained yard with edging and cleanup work"
+                sx={{ minHeight: { xs: 260, md: 420 }, objectFit: "cover" }}
+              />
+            </Card>
+            <Box>
+              <Chip label="Why This Works Better" sx={{ mb: 2, bgcolor: "rgba(53,95,24,0.08)", color: "primary.dark", fontWeight: 800 }} />
+              <Typography variant="h2" sx={{ mb: 2 }}>
+                A stronger visual system with better responsive behavior.
+              </Typography>
+              <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.85, mb: 3 }}>
+                The site now emphasizes business credibility instead of social metrics. That
+                means clearer navigation, deeper service descriptions, dedicated project
+                examples, and multiple pages that make the company feel more established.
+              </Typography>
+              <Stack spacing={1.5}>
+                {reasonsToChoose.map((reason) => (
+                  <Stack key={reason} direction="row" spacing={1.25} alignItems="flex-start">
+                    <Box sx={{ width: 10, height: 10, borderRadius: 999, bgcolor: "secondary.main", mt: 1 }} />
+                    <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.75 }}>
+                      {reason}
+                    </Typography>
+                  </Stack>
+                ))}
+              </Stack>
+            </Box>
+          </Box>
+        </Container>
+      </Box>
 
-      <section className="section section-alt">
-        <div className="container">
-          <div className="section-heading">
-            <p className="eyebrow">Service Area</p>
-            <h2>Serving Wareham and nearby South Coast communities.</h2>
-          </div>
-          <div className="town-chip-grid">
+      <Container maxWidth="xl" sx={{ py: { xs: 6, md: 9 } }}>
+        <Stack spacing={1.5} sx={{ mb: 4 }}>
+          <Chip label="How It Works" sx={{ width: "fit-content", bgcolor: "secondary.light", fontWeight: 800 }} />
+          <Typography variant="h2">A straightforward quote-to-service process.</Typography>
+        </Stack>
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: { xs: "1fr", md: "repeat(3, 1fr)" },
+            gap: 2.5,
+          }}
+        >
+          {processSteps.map((item) => (
+            <Card key={item.step}>
+              <CardContent sx={{ p: 3 }}>
+                <Box
+                  sx={{
+                    width: 48,
+                    height: 48,
+                    borderRadius: 999,
+                    bgcolor: "primary.dark",
+                    color: "white",
+                    display: "grid",
+                    placeItems: "center",
+                    mb: 2,
+                    fontFamily: '"Syne", sans-serif',
+                    fontWeight: 800,
+                  }}
+                >
+                  {item.step}
+                </Box>
+                <Typography variant="h5" sx={{ mb: 1, fontSize: "1.35rem" }}>
+                  {item.title}
+                </Typography>
+                <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.8 }}>
+                  {item.text}
+                </Typography>
+              </CardContent>
+            </Card>
+          ))}
+        </Box>
+      </Container>
+
+      <Box sx={{ bgcolor: "#f2f6ec", borderTop: "1px solid rgba(29,59,20,0.08)", borderBottom: "1px solid rgba(29,59,20,0.08)" }}>
+        <Container maxWidth="xl" sx={{ py: { xs: 6, md: 8 } }}>
+          <Stack spacing={1.5} sx={{ mb: 3.5 }}>
+            <Chip label="Service Area" sx={{ width: "fit-content", bgcolor: "rgba(53,95,24,0.08)", color: "primary.dark", fontWeight: 800 }} />
+            <Typography variant="h2">Serving Wareham and nearby South Coast communities.</Typography>
+          </Stack>
+          <Stack direction="row" spacing={1.25} useFlexGap flexWrap="wrap">
             {serviceArea.map((town) => (
-              <span key={town}>{town}, MA</span>
+              <Chip key={town} label={`${town}, MA`} variant="outlined" sx={{ bgcolor: "background.paper", px: 0.5, py: 2.2 }} />
             ))}
-          </div>
-        </div>
-      </section>
+          </Stack>
+        </Container>
+      </Box>
     </>
   );
 }
