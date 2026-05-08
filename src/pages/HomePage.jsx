@@ -191,15 +191,36 @@ function HomePage() {
                 component="img"
                 image="/images/suburban-yard-cleanup.png"
                 alt="Well maintained yard with edging and cleanup work"
-                sx={{ height: { xs: 220, sm: 320, md: 420 }, objectFit: "cover" }}
+                sx={{
+                  display: "block",
+                  width: "100%",
+                  height: { xs: "auto", sm: 320, md: 420 },
+                  maxHeight: { xs: 340, sm: "none" },
+                  objectFit: { xs: "contain", sm: "cover" },
+                  objectPosition: "center",
+                  bgcolor: { xs: "#eef3e7", sm: "transparent" },
+                }}
               />
             </Card>
-            <Box>
-              <Chip label="Why Choose Task Force" sx={{ mb: 2, bgcolor: "rgba(53,95,24,0.08)", color: "primary.dark", fontWeight: 700 }} />
-              <Typography variant="h2" sx={{ mb: 2 }}>
+            <Box sx={{ minWidth: 0 }}>
+              <Chip
+                label="Why Choose Task Force"
+                sx={{
+                  mb: 2,
+                  bgcolor: "rgba(53,95,24,0.08)",
+                  color: "primary.dark",
+                  fontWeight: 700,
+                  maxWidth: { xs: "100%", sm: "fit-content" },
+                }}
+              />
+              <Typography variant="h2" sx={{ mb: 2, fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.9rem" } }}>
                 Dependable service with a straightforward local approach.
               </Typography>
-              <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.85, mb: 3 }}>
+              <Typography
+                variant="body1"
+                color="text.secondary"
+                sx={{ lineHeight: { xs: 1.75, sm: 1.85 }, mb: 3, fontSize: { xs: "0.98rem", sm: "1rem" } }}
+              >
                 The site is now focused on what property owners actually want to know:
                 the services offered, where the business works, how to get a quote, and
                 why the company is a reliable fit for recurring lawn care.
@@ -208,7 +229,11 @@ function HomePage() {
                 {reasonsToChoose.map((reason) => (
                   <Stack key={reason} direction="row" spacing={1.25} alignItems="flex-start">
                     <Box sx={{ width: 10, height: 10, borderRadius: 999, bgcolor: "secondary.main", mt: 1 }} />
-                    <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.75 }}>
+                    <Typography
+                      variant="body1"
+                      color="text.secondary"
+                      sx={{ lineHeight: 1.75, fontSize: { xs: "0.96rem", sm: "1rem" }, minWidth: 0 }}
+                    >
                       {reason}
                     </Typography>
                   </Stack>

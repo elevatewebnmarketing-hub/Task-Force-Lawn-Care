@@ -67,34 +67,6 @@ function Layout() {
 
   return (
     <Box sx={{ bgcolor: "background.default", overflowX: "clip", width: "100%", maxWidth: "100%" }}>
-      <Box sx={{ bgcolor: "primary.dark", color: "rgba(255,255,255,0.92)", py: 1 }}>
-        <Container
-          maxWidth="lg"
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            gap: 2,
-            flexWrap: "wrap",
-            fontSize: 14,
-            px: { xs: 2, sm: 3 },
-          }}
-        >
-          <Typography variant="body2">South Coast Massachusetts Lawn Care</Typography>
-          <Stack
-            direction={{ xs: "column", sm: "row" }}
-            spacing={{ xs: 0.5, sm: 2 }}
-            sx={{ minWidth: 0, maxWidth: "100%" }}
-          >
-            <Link href={phoneHref} color="inherit" underline="none" sx={{ overflowWrap: "anywhere" }}>
-              {phoneDisplay}
-            </Link>
-            <Link href={`mailto:${email}`} color="inherit" underline="none" sx={{ overflowWrap: "anywhere" }}>
-              {email}
-            </Link>
-          </Stack>
-        </Container>
-      </Box>
-
       <AppBar position="sticky" color="inherit">
         <Container maxWidth="lg">
           <Toolbar sx={{ px: { xs: 2, sm: 3 }, py: 1.25, gap: 1.5, minWidth: 0 }}>
