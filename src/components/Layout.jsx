@@ -33,6 +33,7 @@ function NavItems({ mobile = false, onClick }) {
       direction={mobile ? "column" : "row"}
       spacing={mobile ? 1 : 0.5}
       alignItems={mobile ? "stretch" : "center"}
+      sx={{ minWidth: 0 }}
     >
       {navItems.map((item) => (
         <Button
@@ -47,6 +48,7 @@ function NavItems({ mobile = false, onClick }) {
             justifyContent: mobile ? "flex-start" : "center",
             color: "text.secondary",
             px: 2,
+            maxWidth: "100%",
             "&.active": {
               bgcolor: "rgba(53,95,24,0.08)",
               color: "primary.dark",
@@ -64,7 +66,7 @@ function Layout() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <Box sx={{ bgcolor: "background.default", overflowX: "clip" }}>
+    <Box sx={{ bgcolor: "background.default", overflowX: "clip", width: "100%", maxWidth: "100%" }}>
       <Box sx={{ bgcolor: "primary.dark", color: "rgba(255,255,255,0.92)", py: 1 }}>
         <Container
           maxWidth="lg"
@@ -74,14 +76,19 @@ function Layout() {
             gap: 2,
             flexWrap: "wrap",
             fontSize: 14,
+            px: { xs: 2, sm: 3 },
           }}
         >
           <Typography variant="body2">South Coast Massachusetts Lawn Care</Typography>
-          <Stack direction={{ xs: "column", sm: "row" }} spacing={{ xs: 0.5, sm: 2 }}>
-            <Link href={phoneHref} color="inherit" underline="none">
+          <Stack
+            direction={{ xs: "column", sm: "row" }}
+            spacing={{ xs: 0.5, sm: 2 }}
+            sx={{ minWidth: 0, maxWidth: "100%" }}
+          >
+            <Link href={phoneHref} color="inherit" underline="none" sx={{ overflowWrap: "anywhere" }}>
               {phoneDisplay}
             </Link>
-            <Link href={`mailto:${email}`} color="inherit" underline="none">
+            <Link href={`mailto:${email}`} color="inherit" underline="none" sx={{ overflowWrap: "anywhere" }}>
               {email}
             </Link>
           </Stack>
@@ -90,31 +97,50 @@ function Layout() {
 
       <AppBar position="sticky" color="inherit">
         <Container maxWidth="lg">
-          <Toolbar sx={{ px: 0, py: 1.25, gap: 2 }}>
+          <Toolbar sx={{ px: { xs: 2, sm: 3 }, py: 1.25, gap: 1.5, minWidth: 0 }}>
             <Stack
               component={NavLink}
               to="/"
               direction="row"
-              spacing={1.75}
-              sx={{ color: "inherit", textDecoration: "none", alignItems: "center", flexGrow: 1 }}
+              spacing={1.5}
+              sx={{
+                color: "inherit",
+                textDecoration: "none",
+                alignItems: "center",
+                flexGrow: 1,
+                minWidth: 0,
+              }}
             >
               <Box
                 component="img"
                 src="/images/task-force-logo.jpg"
                 alt="Task Force Lawn Care logo"
                 sx={{
-                  width: { xs: 56, md: 68 },
-                  height: { xs: 56, md: 68 },
+                  width: { xs: 52, sm: 56, md: 64 },
+                  height: { xs: 52, sm: 56, md: 64 },
                   borderRadius: 2,
                   border: "1px solid rgba(29,59,20,0.08)",
                   bgcolor: "white",
+                  flexShrink: 0,
                 }}
               />
-              <Box>
-                <Typography variant="h6" sx={{ fontFamily: '"Bitter", serif', fontWeight: 700 }}>
+              <Box sx={{ minWidth: 0 }}>
+                <Typography
+                  variant="h6"
+                  sx={{
+                    fontFamily: '"Bitter", serif',
+                    fontWeight: 700,
+                    fontSize: { xs: "1rem", sm: "1.1rem" },
+                    lineHeight: 1.15,
+                  }}
+                >
                   Task Force Lawn Care
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{ lineHeight: 1.25, fontSize: { xs: "0.8rem", sm: "0.875rem" } }}
+                >
                   Your Lawn. Our Mission.
                 </Typography>
               </Box>
@@ -128,14 +154,14 @@ function Layout() {
               href={phoneHref}
               variant="contained"
               color="primary"
-              sx={{ display: { xs: "none", md: "inline-flex" } }}
+              sx={{ display: { xs: "none", md: "inline-flex" }, whiteSpace: "nowrap" }}
             >
               Request Quote
             </Button>
 
             <IconButton
               onClick={() => setMobileOpen(true)}
-              sx={{ display: { xs: "inline-flex", lg: "none" } }}
+              sx={{ display: { xs: "inline-flex", lg: "none" }, flexShrink: 0 }}
             >
               <MenuIcon />
             </IconButton>
@@ -151,10 +177,10 @@ function Layout() {
           <NavItems mobile onClick={() => setMobileOpen(false)} />
           <Divider sx={{ my: 2 }} />
           <Stack spacing={1.5}>
-            <Button href={phoneHref} variant="contained">
+            <Button href={phoneHref} variant="contained" fullWidth>
               Call {phoneDisplay}
             </Button>
-            <Button href={`mailto:${email}`} variant="outlined" color="primary">
+            <Button href={`mailto:${email}`} variant="outlined" color="primary" fullWidth>
               Email Us
             </Button>
           </Stack>
@@ -181,18 +207,19 @@ function Layout() {
             gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr", lg: "1.15fr 0.7fr 0.9fr 0.9fr" },
             gap: { xs: 4, md: 5 },
             pb: 5,
+            px: { xs: 2, sm: 3 },
           }}
         >
-          <Box>
-            <Stack direction="row" spacing={2} alignItems="center" sx={{ mb: 2 }}>
+          <Box sx={{ minWidth: 0 }}>
+            <Stack direction="row" spacing={2} alignItems="center" sx={{ mb: 2, minWidth: 0 }}>
               <Box
                 component="img"
                 src="/images/task-force-logo.jpg"
                 alt="Task Force Lawn Care logo"
-                sx={{ width: 60, height: 60, borderRadius: 2, bgcolor: "white" }}
+                sx={{ width: 60, height: 60, borderRadius: 2, bgcolor: "white", flexShrink: 0 }}
               />
-              <Box>
-                <Typography variant="h6" sx={{ fontFamily: '"Bitter", serif' }}>
+              <Box sx={{ minWidth: 0 }}>
+                <Typography variant="h6" sx={{ fontFamily: '"Bitter", serif', lineHeight: 1.2 }}>
                   Task Force Lawn Care, LLC
                 </Typography>
                 <Typography variant="body2" sx={{ color: "rgba(255,255,255,0.72)" }}>
@@ -219,6 +246,7 @@ function Layout() {
                   color="inherit"
                   underline="hover"
                   end={item.to === "/"}
+                  sx={{ width: "fit-content" }}
                 >
                   {item.label}
                 </Link>
@@ -232,31 +260,27 @@ function Layout() {
             </Typography>
             <Stack spacing={0.8}>
               {serviceArea.map((town) => (
-                <Typography
-                  key={town}
-                  variant="body2"
-                  sx={{ color: "rgba(255,255,255,0.78)" }}
-                >
+                <Typography key={town} variant="body2" sx={{ color: "rgba(255,255,255,0.78)" }}>
                   {town}, MA
                 </Typography>
               ))}
             </Stack>
           </Box>
 
-          <Box>
+          <Box sx={{ minWidth: 0 }}>
             <Typography variant="h6" sx={{ mb: 1.5, fontFamily: '"Bitter", serif' }}>
               Contact
             </Typography>
             <Stack spacing={1.5}>
-              <Stack direction="row" spacing={1} alignItems="center">
+              <Stack direction="row" spacing={1} alignItems="center" sx={{ minWidth: 0 }}>
                 <LocalPhoneOutlinedIcon fontSize="small" />
                 <Link href={phoneHref} color="inherit" underline="hover">
                   {phoneDisplay}
                 </Link>
               </Stack>
-              <Stack direction="row" spacing={1} alignItems="center">
+              <Stack direction="row" spacing={1} alignItems="center" sx={{ minWidth: 0 }}>
                 <EmailOutlinedIcon fontSize="small" />
-                <Link href={`mailto:${email}`} color="inherit" underline="hover">
+                <Link href={`mailto:${email}`} color="inherit" underline="hover" sx={{ overflowWrap: "anywhere" }}>
                   {email}
                 </Link>
               </Stack>
@@ -278,6 +302,7 @@ function Layout() {
               justifyContent: "space-between",
               gap: 2,
               flexWrap: "wrap",
+              px: { xs: 2, sm: 3 },
             }}
           >
             <Typography variant="body2" sx={{ color: "rgba(255,255,255,0.66)" }}>

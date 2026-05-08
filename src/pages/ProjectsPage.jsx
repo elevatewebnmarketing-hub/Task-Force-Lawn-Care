@@ -12,7 +12,7 @@ import { projectHighlights } from "../siteData";
 
 function ProjectsPage() {
   return (
-    <Container maxWidth="lg" sx={{ py: { xs: 6, md: 8 } }}>
+    <Container maxWidth="lg" sx={{ py: { xs: 5, md: 8 }, px: { xs: 2, sm: 3 } }}>
       <Stack spacing={1.5} sx={{ mb: 4.5, maxWidth: 860 }}>
         <Chip label="Projects" sx={{ width: "fit-content", bgcolor: "secondary.light", fontWeight: 700 }} />
         <Typography variant="h1" sx={{ fontSize: { xs: "2.25rem", md: "3.75rem" } }}>
@@ -37,9 +37,9 @@ function ProjectsPage() {
               component="img"
               image={project.image}
               alt={project.title}
-              sx={{ minHeight: 260, objectFit: "cover" }}
+              sx={{ height: { xs: 220, sm: 260 }, objectFit: "cover" }}
             />
-            <CardContent sx={{ p: 3 }}>
+            <CardContent sx={{ p: { xs: 2.25, sm: 3 } }}>
               <Chip
                 label={project.location}
                 size="small"

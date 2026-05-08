@@ -3,7 +3,7 @@ import { aboutBullets } from "../siteData";
 
 function AboutPage() {
   return (
-    <Container maxWidth="lg" sx={{ py: { xs: 6, md: 8 } }}>
+    <Container maxWidth="lg" sx={{ py: { xs: 5, md: 8 }, px: { xs: 2, sm: 3 } }}>
       <Stack spacing={1.5} sx={{ mb: 4.5, maxWidth: 860 }}>
         <Chip label="About" sx={{ width: "fit-content", bgcolor: "secondary.light", fontWeight: 700 }} />
         <Typography variant="h1" sx={{ fontSize: { xs: "2.25rem", md: "3.75rem" } }}>
@@ -24,7 +24,7 @@ function AboutPage() {
         }}
       >
         <Card>
-          <CardContent sx={{ p: 3.5 }}>
+          <CardContent sx={{ p: { xs: 2.25, sm: 3.5 } }}>
             <Typography variant="h4" sx={{ mb: 2 }}>
               What the company focuses on
             </Typography>
@@ -46,7 +46,7 @@ function AboutPage() {
             component="img"
             image="/images/grass-texture-detail.png"
             alt="Close detail of healthy trimmed lawn grass"
-            sx={{ minHeight: { xs: 260, md: 100 }, height: "100%", objectFit: "cover" }}
+            sx={{ height: { xs: 220, sm: 280, md: "100%" }, minHeight: { md: 100 }, objectFit: "cover" }}
           />
         </Card>
       </Box>

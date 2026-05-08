@@ -15,7 +15,7 @@ import { email, phoneDisplay, phoneHref, serviceArea } from "../siteData";
 
 function ContactPage() {
   return (
-    <Container maxWidth="lg" sx={{ py: { xs: 6, md: 8 } }}>
+    <Container maxWidth="lg" sx={{ py: { xs: 5, md: 8 }, px: { xs: 2, sm: 3 } }}>
       <Stack spacing={1.5} sx={{ mb: 4.5, maxWidth: 860 }}>
         <Chip label="Contact" sx={{ width: "fit-content", bgcolor: "secondary.light", fontWeight: 700 }} />
         <Typography variant="h1" sx={{ fontSize: { xs: "2.25rem", md: "3.75rem" } }}>
@@ -35,7 +35,7 @@ function ContactPage() {
         }}
       >
         <Card>
-          <CardContent sx={{ p: 3.5 }}>
+          <CardContent sx={{ p: { xs: 2.25, sm: 3.5 } }}>
             <Typography variant="h4" sx={{ mb: 2.5 }}>
               Direct Contact
             </Typography>
@@ -48,7 +48,7 @@ function ContactPage() {
               </Stack>
               <Stack direction="row" spacing={1.5} alignItems="center">
                 <EmailOutlinedIcon color="primary" />
-                <Link href={`mailto:${email}`} underline="hover" color="inherit">
+                <Link href={`mailto:${email}`} underline="hover" color="inherit" sx={{ overflowWrap: "anywhere" }}>
                   {email}
                 </Link>
               </Stack>
@@ -65,7 +65,7 @@ function ContactPage() {
         </Card>
 
         <Card>
-          <CardContent sx={{ p: 3.5 }}>
+          <CardContent sx={{ p: { xs: 2.25, sm: 3.5 } }}>
             <Typography variant="h4" sx={{ mb: 2.5 }}>
               Areas Served
             </Typography>

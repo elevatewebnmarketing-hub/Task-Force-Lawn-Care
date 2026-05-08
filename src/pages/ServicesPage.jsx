@@ -13,7 +13,7 @@ import { coreServices, phoneDisplay, phoneHref } from "../siteData";
 
 function ServicesPage() {
   return (
-    <Container maxWidth="lg" sx={{ py: { xs: 6, md: 8 } }}>
+    <Container maxWidth="lg" sx={{ py: { xs: 5, md: 8 }, px: { xs: 2, sm: 3 } }}>
       <Stack spacing={1.5} sx={{ mb: 4.5, maxWidth: 860 }}>
         <Chip label="Services" sx={{ width: "fit-content", bgcolor: "secondary.light", fontWeight: 700 }} />
         <Typography variant="h1" sx={{ fontSize: { xs: "2.25rem", md: "3.75rem" } }}>
@@ -35,7 +35,7 @@ function ServicesPage() {
       >
         {coreServices.map((service) => (
           <Card key={service.title}>
-            <CardContent sx={{ p: 3.5 }}>
+            <CardContent sx={{ p: { xs: 2.25, sm: 3.5 } }}>
               <Stack direction="row" spacing={1.5} alignItems="center" sx={{ mb: 2 }}>
                 <Box
                   sx={{
@@ -71,7 +71,7 @@ function ServicesPage() {
       <Card sx={{ mt: 4, background: "linear-gradient(180deg, #fffdf8, #f3f6ee)" }}>
         <CardContent
           sx={{
-            p: 3.5,
+            p: { xs: 2.25, sm: 3.5 },
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
             justifyContent: "space-between",
@@ -88,7 +88,7 @@ function ServicesPage() {
               makes sense for the location.
             </Typography>
           </Box>
-          <Button href={phoneHref} variant="contained" size="large">
+          <Button href={phoneHref} variant="contained" size="large" sx={{ width: { xs: "100%", sm: "auto" } }}>
             Call {phoneDisplay}
           </Button>
         </CardContent>

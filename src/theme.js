@@ -99,6 +99,15 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: 999,
+          maxWidth: "100%",
+          height: "auto",
+        },
+        label: {
+          whiteSpace: "normal",
+          display: "block",
+          lineHeight: 1.25,
+          paddingTop: 6,
+          paddingBottom: 6,
         },
       },
     },

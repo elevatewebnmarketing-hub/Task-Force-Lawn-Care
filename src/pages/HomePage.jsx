@@ -37,7 +37,7 @@ function HomePage() {
           borderBottom: "1px solid rgba(29,59,20,0.08)",
         }}
       >
-        <Container maxWidth="lg" sx={{ py: { xs: 6, md: 8 } }}>
+        <Container maxWidth="lg" sx={{ py: { xs: 5, md: 8 }, px: { xs: 2, sm: 3 } }}>
           <Box
             sx={{
               display: "grid",
@@ -49,7 +49,13 @@ function HomePage() {
             <Box>
               <Chip
                 label="Residential And Small Commercial Lawn Care"
-                sx={{ mb: 2, bgcolor: "rgba(53,95,24,0.08)", color: "primary.dark", fontWeight: 700 }}
+                sx={{
+                  mb: 2,
+                  bgcolor: "rgba(53,95,24,0.08)",
+                  color: "primary.dark",
+                  fontWeight: 700,
+                  maxWidth: { xs: "100%", sm: "fit-content" },
+                }}
               />
               <Typography variant="h1" sx={{ fontSize: { xs: "2.25rem", md: "3.9rem" }, maxWidth: 740 }}>
                 Professional lawn care that keeps your property looking sharp.
@@ -59,8 +65,8 @@ function HomePage() {
                 mowing, trimming, edging, seasonal cleanups, and dependable ongoing
                 property maintenance.
               </Typography>
-              <Stack direction={{ xs: "column", sm: "row" }} spacing={1.5} sx={{ mt: 4 }}>
-                <Button href={phoneHref} variant="contained" size="large">
+              <Stack direction={{ xs: "column", sm: "row" }} spacing={1.5} sx={{ mt: 4, width: "100%" }}>
+                <Button href={phoneHref} variant="contained" size="large" sx={{ width: { xs: "100%", sm: "auto" } }}>
                   Call {phoneDisplay}
                 </Button>
                 <Button
@@ -70,6 +76,7 @@ function HomePage() {
                   color="primary"
                   endIcon={<ArrowForwardRoundedIcon />}
                   size="large"
+                  sx={{ width: { xs: "100%", sm: "auto" } }}
                 >
                   View Services
                 </Button>
@@ -89,7 +96,7 @@ function HomePage() {
                   ["Contact Path", "Direct phone and email quote requests"],
                 ].map(([title, text]) => (
                   <Card key={title}>
-                    <CardContent sx={{ p: 2.5 }}>
+                    <CardContent sx={{ p: { xs: 2, sm: 2.5 } }}>
                       <Typography variant="h6" sx={{ fontSize: "1rem", mb: 1 }}>
                         {title}
                       </Typography>
@@ -107,14 +114,14 @@ function HomePage() {
                 component="img"
                 image="/images/lawn-crew-hero.png"
                 alt="Striped lawn outside a coastal Massachusetts home"
-                sx={{ minHeight: { xs: 260, md: 520 }, objectFit: "cover" }}
+                sx={{ height: { xs: 220, sm: 320, md: 520 }, objectFit: "cover" }}
               />
             </Card>
           </Box>
         </Container>
       </Box>
 
-      <Container maxWidth="lg" sx={{ py: { xs: 6, md: 8 } }}>
+      <Container maxWidth="lg" sx={{ py: { xs: 5, md: 8 }, px: { xs: 2, sm: 3 } }}>
         <Stack spacing={1.5} sx={{ mb: 4 }}>
           <Chip label="Core Services" sx={{ width: "fit-content", bgcolor: "secondary.light", fontWeight: 700 }} />
           <Typography variant="h2" sx={{ maxWidth: 820 }}>
@@ -132,7 +139,7 @@ function HomePage() {
             const Icon = icons[index];
             return (
               <Card key={service.title}>
-                <CardContent sx={{ p: 3 }}>
+                <CardContent sx={{ p: { xs: 2.25, sm: 3 } }}>
                   <Box
                     sx={{
                       width: 50,
@@ -170,7 +177,7 @@ function HomePage() {
       </Container>
 
       <Box sx={{ bgcolor: "#f3f6ee", borderTop: "1px solid rgba(29,59,20,0.08)", borderBottom: "1px solid rgba(29,59,20,0.08)" }}>
-        <Container maxWidth="lg" sx={{ py: { xs: 6, md: 8 } }}>
+        <Container maxWidth="lg" sx={{ py: { xs: 5, md: 8 }, px: { xs: 2, sm: 3 } }}>
           <Box
             sx={{
               display: "grid",
@@ -184,7 +191,7 @@ function HomePage() {
                 component="img"
                 image="/images/suburban-yard-cleanup.png"
                 alt="Well maintained yard with edging and cleanup work"
-                sx={{ minHeight: { xs: 260, md: 420 }, objectFit: "cover" }}
+                sx={{ height: { xs: 220, sm: 320, md: 420 }, objectFit: "cover" }}
               />
             </Card>
             <Box>
@@ -212,7 +219,7 @@ function HomePage() {
         </Container>
       </Box>
 
-      <Container maxWidth="lg" sx={{ py: { xs: 6, md: 8 } }}>
+      <Container maxWidth="lg" sx={{ py: { xs: 5, md: 8 }, px: { xs: 2, sm: 3 } }}>
         <Stack spacing={1.5} sx={{ mb: 4 }}>
           <Chip label="How It Works" sx={{ width: "fit-content", bgcolor: "secondary.light", fontWeight: 700 }} />
           <Typography variant="h2">A straightforward quote-to-service process.</Typography>
@@ -226,7 +233,7 @@ function HomePage() {
         >
           {processSteps.map((item) => (
             <Card key={item.step}>
-              <CardContent sx={{ p: 3 }}>
+              <CardContent sx={{ p: { xs: 2.25, sm: 3 } }}>
                 <Box
                   sx={{
                     width: 48,
@@ -256,7 +263,7 @@ function HomePage() {
       </Container>
 
       <Box sx={{ bgcolor: "#f3f6ee", borderTop: "1px solid rgba(29,59,20,0.08)", borderBottom: "1px solid rgba(29,59,20,0.08)" }}>
-        <Container maxWidth="lg" sx={{ py: { xs: 6, md: 7 } }}>
+        <Container maxWidth="lg" sx={{ py: { xs: 5, md: 7 }, px: { xs: 2, sm: 3 } }}>
           <Stack spacing={1.5} sx={{ mb: 3.5 }}>
             <Chip label="Service Area" sx={{ width: "fit-content", bgcolor: "rgba(53,95,24,0.08)", color: "primary.dark", fontWeight: 700 }} />
             <Typography variant="h2">Serving Wareham and nearby South Coast communities.</Typography>
