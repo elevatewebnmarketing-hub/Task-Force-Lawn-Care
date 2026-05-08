@@ -3,16 +3,15 @@ import { aboutBullets } from "../siteData";
 
 function AboutPage() {
   return (
-    <Container maxWidth="xl" sx={{ py: { xs: 6, md: 8 } }}>
+    <Container maxWidth="lg" sx={{ py: { xs: 6, md: 8 } }}>
       <Stack spacing={1.5} sx={{ mb: 4.5, maxWidth: 860 }}>
-        <Chip label="About" sx={{ width: "fit-content", bgcolor: "secondary.light", fontWeight: 800 }} />
-        <Typography variant="h1" sx={{ fontSize: { xs: "2.4rem", md: "4rem" } }}>
-          A more grounded business presentation for Task Force Lawn Care.
+        <Chip label="About" sx={{ width: "fit-content", bgcolor: "secondary.light", fontWeight: 700 }} />
+        <Typography variant="h1" sx={{ fontSize: { xs: "2.25rem", md: "3.75rem" } }}>
+          A dependable local lawn care company serving the South Coast.
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.85 }}>
-          This site is now structured like a conventional local-service website, with
-          separate pages, a fuller business story, and stronger detail around scope,
-          market, and contact paths.
+          Task Force Lawn Care is positioned around the work local property owners hire
+          most often: mowing, edging, trimming, seasonal cleanup, and recurring property maintenance.
         </Typography>
       </Stack>
 
@@ -27,7 +26,7 @@ function AboutPage() {
         <Card>
           <CardContent sx={{ p: 3.5 }}>
             <Typography variant="h4" sx={{ mb: 2 }}>
-              What the site now communicates
+              What the company focuses on
             </Typography>
             <Stack spacing={2}>
               {aboutBullets.map((item) => (

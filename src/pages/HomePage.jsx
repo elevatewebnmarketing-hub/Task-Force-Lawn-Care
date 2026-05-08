@@ -33,31 +33,31 @@ function HomePage() {
       <Box
         sx={{
           background:
-            "linear-gradient(180deg, rgba(239,224,169,0.24), rgba(255,255,255,0) 42%), linear-gradient(180deg, #fffdf8 0%, #f4f7ef 100%)",
+            "linear-gradient(180deg, rgba(239,224,169,0.18), rgba(255,255,255,0) 44%), linear-gradient(180deg, #fffdf8 0%, #f7f4ec 100%)",
           borderBottom: "1px solid rgba(29,59,20,0.08)",
         }}
       >
-        <Container maxWidth="xl" sx={{ py: { xs: 6, md: 10 } }}>
+        <Container maxWidth="lg" sx={{ py: { xs: 6, md: 8 } }}>
           <Box
             sx={{
               display: "grid",
               gridTemplateColumns: { xs: "1fr", md: "1.05fr 0.95fr" },
-              gap: { xs: 4, md: 6 },
+              gap: { xs: 4, md: 5 },
               alignItems: "center",
             }}
           >
             <Box>
               <Chip
-                label="Reliable Residential And Small Commercial Lawn Care"
-                sx={{ mb: 2, bgcolor: "rgba(53,95,24,0.08)", color: "primary.dark", fontWeight: 800 }}
+                label="Residential And Small Commercial Lawn Care"
+                sx={{ mb: 2, bgcolor: "rgba(53,95,24,0.08)", color: "primary.dark", fontWeight: 700 }}
               />
-              <Typography variant="h1" sx={{ fontSize: { xs: "2.5rem", md: "4.6rem" }, maxWidth: 760 }}>
-                A cleaner, more professional site built on a proper UI system.
+              <Typography variant="h1" sx={{ fontSize: { xs: "2.25rem", md: "3.9rem" }, maxWidth: 740 }}>
+                Professional lawn care that keeps your property looking sharp.
               </Typography>
-              <Typography variant="body1" color="text.secondary" sx={{ mt: 2.5, maxWidth: 720, lineHeight: 1.85 }}>
-                Task Force Lawn Care, LLC helps South Coast Massachusetts property owners
-                keep lawns sharp with routine mowing, trimming, edging, seasonal cleanups,
-                and ongoing property maintenance.
+              <Typography variant="body1" color="text.secondary" sx={{ mt: 2.5, maxWidth: 700, lineHeight: 1.8 }}>
+                Task Force Lawn Care, LLC serves South Coast Massachusetts with routine
+                mowing, trimming, edging, seasonal cleanups, and dependable ongoing
+                property maintenance.
               </Typography>
               <Stack direction={{ xs: "column", sm: "row" }} spacing={1.5} sx={{ mt: 4 }}>
                 <Button href={phoneHref} variant="contained" size="large">
@@ -77,7 +77,7 @@ function HomePage() {
 
               <Box
                 sx={{
-                  mt: 4.5,
+                  mt: 4,
                   display: "grid",
                   gridTemplateColumns: { xs: "1fr", sm: "repeat(3, 1fr)" },
                   gap: 2,
@@ -86,7 +86,7 @@ function HomePage() {
                 {[
                   ["Service Area", "Wareham and surrounding South Coast towns"],
                   ["Core Focus", "Mowing, edging, trimming, cleanups, maintenance"],
-                  ["Contact Path", "Simple phone and email quote requests"],
+                  ["Contact Path", "Direct phone and email quote requests"],
                 ].map(([title, text]) => (
                   <Card key={title}>
                     <CardContent sx={{ p: 2.5 }}>
@@ -102,29 +102,29 @@ function HomePage() {
               </Box>
             </Box>
 
-            <Card sx={{ overflow: "hidden", borderRadius: { xs: 4, md: 6 } }}>
+            <Card sx={{ overflow: "hidden", borderRadius: 4 }}>
               <CardMedia
                 component="img"
                 image="/images/lawn-crew-hero.png"
                 alt="Striped lawn outside a coastal Massachusetts home"
-                sx={{ minHeight: { xs: 260, md: 560 }, objectFit: "cover" }}
+                sx={{ minHeight: { xs: 260, md: 520 }, objectFit: "cover" }}
               />
             </Card>
           </Box>
         </Container>
       </Box>
 
-      <Container maxWidth="xl" sx={{ py: { xs: 6, md: 9 } }}>
+      <Container maxWidth="lg" sx={{ py: { xs: 6, md: 8 } }}>
         <Stack spacing={1.5} sx={{ mb: 4 }}>
-          <Chip label="Core Services" sx={{ width: "fit-content", bgcolor: "secondary.light", fontWeight: 800 }} />
-          <Typography variant="h2" sx={{ maxWidth: 840 }}>
-            Focused service offerings that are easy to understand and easy to book.
+          <Chip label="Core Services" sx={{ width: "fit-content", bgcolor: "secondary.light", fontWeight: 700 }} />
+          <Typography variant="h2" sx={{ maxWidth: 820 }}>
+            Focused services that are easy to understand and easy to book.
           </Typography>
         </Stack>
         <Box
           sx={{
             display: "grid",
-            gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", xl: "repeat(4, 1fr)" },
+            gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", lg: "repeat(4, 1fr)" },
             gap: 2.5,
           }}
         >
@@ -135,8 +135,8 @@ function HomePage() {
                 <CardContent sx={{ p: 3 }}>
                   <Box
                     sx={{
-                      width: 52,
-                      height: 52,
+                      width: 50,
+                      height: 50,
                       borderRadius: 999,
                       bgcolor: "rgba(53,95,24,0.1)",
                       display: "grid",
@@ -146,7 +146,7 @@ function HomePage() {
                   >
                     <Icon color="primary" />
                   </Box>
-                  <Typography variant="h5" sx={{ mb: 1.25, fontSize: "1.3rem" }}>
+                  <Typography variant="h5" sx={{ mb: 1.25, fontSize: "1.25rem" }}>
                     {service.title}
                   </Typography>
                   <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.8, mb: 2 }}>
@@ -154,12 +154,7 @@ function HomePage() {
                   </Typography>
                   <Stack spacing={1}>
                     {service.details.map((detail) => (
-                      <Stack
-                        key={detail}
-                        direction="row"
-                        spacing={1}
-                        alignItems="flex-start"
-                      >
+                      <Stack key={detail} direction="row" spacing={1} alignItems="flex-start">
                         <AssignmentTurnedInOutlinedIcon color="secondary" fontSize="small" sx={{ mt: 0.2 }} />
                         <Typography variant="body2" color="text.secondary">
                           {detail}
@@ -174,17 +169,17 @@ function HomePage() {
         </Box>
       </Container>
 
-      <Box sx={{ bgcolor: "#f2f6ec", borderTop: "1px solid rgba(29,59,20,0.08)", borderBottom: "1px solid rgba(29,59,20,0.08)" }}>
-        <Container maxWidth="xl" sx={{ py: { xs: 6, md: 9 } }}>
+      <Box sx={{ bgcolor: "#f3f6ee", borderTop: "1px solid rgba(29,59,20,0.08)", borderBottom: "1px solid rgba(29,59,20,0.08)" }}>
+        <Container maxWidth="lg" sx={{ py: { xs: 6, md: 8 } }}>
           <Box
             sx={{
               display: "grid",
               gridTemplateColumns: { xs: "1fr", md: "0.96fr 1.04fr" },
-              gap: { xs: 4, md: 4 },
+              gap: 4,
               alignItems: "center",
             }}
           >
-            <Card sx={{ overflow: "hidden", borderRadius: { xs: 4, md: 6 } }}>
+            <Card sx={{ overflow: "hidden", borderRadius: 4 }}>
               <CardMedia
                 component="img"
                 image="/images/suburban-yard-cleanup.png"
@@ -193,14 +188,14 @@ function HomePage() {
               />
             </Card>
             <Box>
-              <Chip label="Why This Works Better" sx={{ mb: 2, bgcolor: "rgba(53,95,24,0.08)", color: "primary.dark", fontWeight: 800 }} />
+              <Chip label="Why Choose Task Force" sx={{ mb: 2, bgcolor: "rgba(53,95,24,0.08)", color: "primary.dark", fontWeight: 700 }} />
               <Typography variant="h2" sx={{ mb: 2 }}>
-                A stronger visual system with better responsive behavior.
+                Dependable service with a straightforward local approach.
               </Typography>
               <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.85, mb: 3 }}>
-                The site now emphasizes business credibility instead of social metrics. That
-                means clearer navigation, deeper service descriptions, dedicated project
-                examples, and multiple pages that make the company feel more established.
+                The site is now focused on what property owners actually want to know:
+                the services offered, where the business works, how to get a quote, and
+                why the company is a reliable fit for recurring lawn care.
               </Typography>
               <Stack spacing={1.5}>
                 {reasonsToChoose.map((reason) => (
@@ -217,9 +212,9 @@ function HomePage() {
         </Container>
       </Box>
 
-      <Container maxWidth="xl" sx={{ py: { xs: 6, md: 9 } }}>
+      <Container maxWidth="lg" sx={{ py: { xs: 6, md: 8 } }}>
         <Stack spacing={1.5} sx={{ mb: 4 }}>
-          <Chip label="How It Works" sx={{ width: "fit-content", bgcolor: "secondary.light", fontWeight: 800 }} />
+          <Chip label="How It Works" sx={{ width: "fit-content", bgcolor: "secondary.light", fontWeight: 700 }} />
           <Typography variant="h2">A straightforward quote-to-service process.</Typography>
         </Stack>
         <Box
@@ -242,13 +237,13 @@ function HomePage() {
                     display: "grid",
                     placeItems: "center",
                     mb: 2,
-                    fontFamily: '"Syne", sans-serif',
-                    fontWeight: 800,
+                    fontFamily: '"Bitter", serif',
+                    fontWeight: 700,
                   }}
                 >
                   {item.step}
                 </Box>
-                <Typography variant="h5" sx={{ mb: 1, fontSize: "1.35rem" }}>
+                <Typography variant="h5" sx={{ mb: 1, fontSize: "1.3rem" }}>
                   {item.title}
                 </Typography>
                 <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.8 }}>
@@ -260,15 +255,15 @@ function HomePage() {
         </Box>
       </Container>
 
-      <Box sx={{ bgcolor: "#f2f6ec", borderTop: "1px solid rgba(29,59,20,0.08)", borderBottom: "1px solid rgba(29,59,20,0.08)" }}>
-        <Container maxWidth="xl" sx={{ py: { xs: 6, md: 8 } }}>
+      <Box sx={{ bgcolor: "#f3f6ee", borderTop: "1px solid rgba(29,59,20,0.08)", borderBottom: "1px solid rgba(29,59,20,0.08)" }}>
+        <Container maxWidth="lg" sx={{ py: { xs: 6, md: 7 } }}>
           <Stack spacing={1.5} sx={{ mb: 3.5 }}>
-            <Chip label="Service Area" sx={{ width: "fit-content", bgcolor: "rgba(53,95,24,0.08)", color: "primary.dark", fontWeight: 800 }} />
+            <Chip label="Service Area" sx={{ width: "fit-content", bgcolor: "rgba(53,95,24,0.08)", color: "primary.dark", fontWeight: 700 }} />
             <Typography variant="h2">Serving Wareham and nearby South Coast communities.</Typography>
           </Stack>
-          <Stack direction="row" spacing={1.25} useFlexGap flexWrap="wrap">
+          <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap" sx={{ maxWidth: 860 }}>
             {serviceArea.map((town) => (
-              <Chip key={town} label={`${town}, MA`} variant="outlined" sx={{ bgcolor: "background.paper", px: 0.5, py: 2.2 }} />
+              <Chip key={town} label={`${town}, MA`} variant="outlined" sx={{ bgcolor: "background.paper" }} />
             ))}
           </Stack>
         </Container>

@@ -25,23 +25,35 @@ const theme = createTheme({
     borderRadius: 18,
   },
   typography: {
-    fontFamily: '"Manrope", sans-serif',
+    fontFamily: '"Libre Franklin", sans-serif',
     h1: {
-      fontFamily: '"Syne", sans-serif',
-      fontWeight: 800,
-      lineHeight: 1.02,
-    },
-    h2: {
-      fontFamily: '"Syne", sans-serif',
+      fontFamily: '"Bitter", serif',
       fontWeight: 700,
       lineHeight: 1.08,
     },
+    h2: {
+      fontFamily: '"Bitter", serif',
+      fontWeight: 700,
+      lineHeight: 1.12,
+    },
     h3: {
-      fontFamily: '"Syne", sans-serif',
+      fontFamily: '"Bitter", serif',
+      fontWeight: 700,
+    },
+    h4: {
+      fontFamily: '"Bitter", serif',
+      fontWeight: 700,
+    },
+    h5: {
+      fontFamily: '"Bitter", serif',
+      fontWeight: 700,
+    },
+    h6: {
+      fontFamily: '"Bitter", serif',
       fontWeight: 700,
     },
     button: {
-      fontWeight: 800,
+      fontWeight: 700,
       textTransform: "none",
     },
   },
@@ -60,18 +72,18 @@ const theme = createTheme({
       },
       styleOverrides: {
         root: {
-          borderRadius: 999,
-          paddingInline: 22,
-          minHeight: 48,
+          borderRadius: 12,
+          paddingInline: 20,
+          minHeight: 46,
         },
       },
     },
     MuiCard: {
       styleOverrides: {
         root: {
-          borderRadius: 24,
+          borderRadius: 18,
           border: "1px solid rgba(29,59,20,0.08)",
-          boxShadow: "0 16px 40px rgba(29,59,20,0.06)",
+          boxShadow: "0 14px 30px rgba(29,59,20,0.05)",
           backgroundImage: "none",
         },
       },
@@ -79,7 +91,7 @@ const theme = createTheme({
     MuiPaper: {
       styleOverrides: {
         rounded: {
-          borderRadius: 24,
+          borderRadius: 18,
         },
       },
     },
@@ -87,6 +99,25 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: 999,
+        },
+      },
+    },
+    MuiCssBaseline: {
+      styleOverrides: {
+        "html, body, #root": {
+          width: "100%",
+          maxWidth: "100%",
+          overflowX: "clip",
+        },
+        body: {
+          margin: 0,
+          background: "linear-gradient(180deg, #fcfbf7 0%, #f6f2e8 55%, #f1ede2 100%)",
+        },
+        "*": {
+          boxSizing: "border-box",
+        },
+        img: {
+          maxWidth: "100%",
         },
       },
     },

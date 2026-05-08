@@ -15,15 +15,15 @@ import { email, phoneDisplay, phoneHref, serviceArea } from "../siteData";
 
 function ContactPage() {
   return (
-    <Container maxWidth="xl" sx={{ py: { xs: 6, md: 8 } }}>
+    <Container maxWidth="lg" sx={{ py: { xs: 6, md: 8 } }}>
       <Stack spacing={1.5} sx={{ mb: 4.5, maxWidth: 860 }}>
-        <Chip label="Contact" sx={{ width: "fit-content", bgcolor: "secondary.light", fontWeight: 800 }} />
-        <Typography variant="h1" sx={{ fontSize: { xs: "2.4rem", md: "4rem" } }}>
+        <Chip label="Contact" sx={{ width: "fit-content", bgcolor: "secondary.light", fontWeight: 700 }} />
+        <Typography variant="h1" sx={{ fontSize: { xs: "2.25rem", md: "3.75rem" } }}>
           Request a quote for mowing, maintenance, or seasonal cleanup.
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.85 }}>
-          The contact page stays simple: clear service area, direct contact information,
-          and no unnecessary steps between a visitor and a quote request.
+          Reach out by phone or email to discuss your property, service frequency, and
+          the kind of lawn care support you need.
         </Typography>
       </Stack>
 
@@ -69,7 +69,7 @@ function ContactPage() {
             <Typography variant="h4" sx={{ mb: 2.5 }}>
               Areas Served
             </Typography>
-            <Stack direction="row" spacing={1.25} useFlexGap flexWrap="wrap">
+            <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
               {serviceArea.map((town) => (
                 <Chip key={town} label={`${town}, MA`} variant="outlined" />
               ))}

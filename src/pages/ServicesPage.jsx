@@ -13,10 +13,10 @@ import { coreServices, phoneDisplay, phoneHref } from "../siteData";
 
 function ServicesPage() {
   return (
-    <Container maxWidth="xl" sx={{ py: { xs: 6, md: 8 } }}>
+    <Container maxWidth="lg" sx={{ py: { xs: 6, md: 8 } }}>
       <Stack spacing={1.5} sx={{ mb: 4.5, maxWidth: 860 }}>
-        <Chip label="Services" sx={{ width: "fit-content", bgcolor: "secondary.light", fontWeight: 800 }} />
-        <Typography variant="h1" sx={{ fontSize: { xs: "2.4rem", md: "4rem" } }}>
+        <Chip label="Services" sx={{ width: "fit-content", bgcolor: "secondary.light", fontWeight: 700 }} />
+        <Typography variant="h1" sx={{ fontSize: { xs: "2.25rem", md: "3.75rem" } }}>
           Lawn care services built for repeat business and clean presentation.
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.85 }}>
@@ -49,7 +49,7 @@ function ServicesPage() {
                 >
                   <BuildCircleOutlinedIcon color="primary" />
                 </Box>
-                <Typography variant="h4" sx={{ fontSize: { xs: "1.4rem", md: "1.6rem" } }}>
+                <Typography variant="h4" sx={{ fontSize: { xs: "1.35rem", md: "1.55rem" } }}>
                   {service.title}
                 </Typography>
               </Stack>
@@ -68,7 +68,7 @@ function ServicesPage() {
         ))}
       </Box>
 
-      <Card sx={{ mt: 4, background: "linear-gradient(180deg, #fffdf8, #f0f5e8)" }}>
+      <Card sx={{ mt: 4, background: "linear-gradient(180deg, #fffdf8, #f3f6ee)" }}>
         <CardContent
           sx={{
             p: 3.5,

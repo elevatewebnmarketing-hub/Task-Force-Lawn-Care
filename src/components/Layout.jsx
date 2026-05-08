@@ -64,10 +64,10 @@ function Layout() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <Box sx={{ bgcolor: "background.default" }}>
+    <Box sx={{ bgcolor: "background.default", overflowX: "clip" }}>
       <Box sx={{ bgcolor: "primary.dark", color: "rgba(255,255,255,0.92)", py: 1 }}>
         <Container
-          maxWidth="xl"
+          maxWidth="lg"
           sx={{
             display: "flex",
             justifyContent: "space-between",
@@ -89,8 +89,8 @@ function Layout() {
       </Box>
 
       <AppBar position="sticky" color="inherit">
-        <Container maxWidth="xl">
-          <Toolbar sx={{ px: { xs: 0, md: 0 }, py: 1.25, gap: 2 }}>
+        <Container maxWidth="lg">
+          <Toolbar sx={{ px: 0, py: 1.25, gap: 2 }}>
             <Stack
               component={NavLink}
               to="/"
@@ -103,15 +103,15 @@ function Layout() {
                 src="/images/task-force-logo.jpg"
                 alt="Task Force Lawn Care logo"
                 sx={{
-                  width: { xs: 62, md: 74 },
-                  height: { xs: 62, md: 74 },
-                  borderRadius: 3,
+                  width: { xs: 56, md: 68 },
+                  height: { xs: 56, md: 68 },
+                  borderRadius: 2,
                   border: "1px solid rgba(29,59,20,0.08)",
                   bgcolor: "white",
                 }}
               />
               <Box>
-                <Typography variant="h6" sx={{ fontFamily: '"Syne", sans-serif', fontWeight: 800 }}>
+                <Typography variant="h6" sx={{ fontFamily: '"Bitter", serif', fontWeight: 700 }}>
                   Task Force Lawn Care
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
@@ -145,7 +145,7 @@ function Layout() {
 
       <Drawer anchor="right" open={mobileOpen} onClose={() => setMobileOpen(false)}>
         <Box sx={{ width: 290, p: 2 }}>
-          <Typography variant="h6" sx={{ mb: 2, fontFamily: '"Syne", sans-serif' }}>
+          <Typography variant="h6" sx={{ mb: 2, fontFamily: '"Bitter", serif' }}>
             Task Force Lawn Care
           </Typography>
           <NavItems mobile onClick={() => setMobileOpen(false)} />
@@ -166,21 +166,21 @@ function Layout() {
       <Box
         component="footer"
         sx={{
-          mt: 6,
-          pt: 7,
-          pb: 5,
+          mt: 7,
+          pt: 6,
           bgcolor: "primary.dark",
           color: "rgba(255,255,255,0.92)",
-          borderTopLeftRadius: { xs: 4, md: 6 },
-          borderTopRightRadius: { xs: 4, md: 6 },
+          borderTop: "4px solid",
+          borderColor: "secondary.main",
         }}
       >
         <Container
-          maxWidth="xl"
+          maxWidth="lg"
           sx={{
             display: "grid",
-            gridTemplateColumns: { xs: "1fr", md: "1.2fr 0.8fr 1fr 1fr" },
-            gap: 4,
+            gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr", lg: "1.15fr 0.7fr 0.9fr 0.9fr" },
+            gap: { xs: 4, md: 5 },
+            pb: 5,
           }}
         >
           <Box>
@@ -189,10 +189,10 @@ function Layout() {
                 component="img"
                 src="/images/task-force-logo.jpg"
                 alt="Task Force Lawn Care logo"
-                sx={{ width: 68, height: 68, borderRadius: 3, bgcolor: "white" }}
+                sx={{ width: 60, height: 60, borderRadius: 2, bgcolor: "white" }}
               />
               <Box>
-                <Typography variant="h6" sx={{ fontFamily: '"Syne", sans-serif' }}>
+                <Typography variant="h6" sx={{ fontFamily: '"Bitter", serif' }}>
                   Task Force Lawn Care, LLC
                 </Typography>
                 <Typography variant="body2" sx={{ color: "rgba(255,255,255,0.72)" }}>
@@ -207,7 +207,7 @@ function Layout() {
           </Box>
 
           <Box>
-            <Typography variant="h6" sx={{ mb: 1.5, fontFamily: '"Syne", sans-serif' }}>
+            <Typography variant="h6" sx={{ mb: 1.5, fontFamily: '"Bitter", serif' }}>
               Quick Links
             </Typography>
             <Stack spacing={1}>
@@ -227,30 +227,24 @@ function Layout() {
           </Box>
 
           <Box>
-            <Typography variant="h6" sx={{ mb: 1.5, fontFamily: '"Syne", sans-serif' }}>
+            <Typography variant="h6" sx={{ mb: 1.5, fontFamily: '"Bitter", serif' }}>
               Service Area
             </Typography>
-            <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
+            <Stack spacing={0.8}>
               {serviceArea.map((town) => (
-                <Box
+                <Typography
                   key={town}
-                  sx={{
-                    px: 1.5,
-                    py: 0.75,
-                    borderRadius: 999,
-                    bgcolor: "rgba(255,255,255,0.08)",
-                    border: "1px solid rgba(255,255,255,0.1)",
-                    fontSize: 14,
-                  }}
+                  variant="body2"
+                  sx={{ color: "rgba(255,255,255,0.78)" }}
                 >
                   {town}, MA
-                </Box>
+                </Typography>
               ))}
             </Stack>
           </Box>
 
           <Box>
-            <Typography variant="h6" sx={{ mb: 1.5, fontFamily: '"Syne", sans-serif' }}>
+            <Typography variant="h6" sx={{ mb: 1.5, fontFamily: '"Bitter", serif' }}>
               Contact
             </Typography>
             <Stack spacing={1.5}>
@@ -275,6 +269,25 @@ function Layout() {
             </Stack>
           </Box>
         </Container>
+        <Box sx={{ borderTop: "1px solid rgba(255,255,255,0.1)" }}>
+          <Container
+            maxWidth="lg"
+            sx={{
+              py: 2,
+              display: "flex",
+              justifyContent: "space-between",
+              gap: 2,
+              flexWrap: "wrap",
+            }}
+          >
+            <Typography variant="body2" sx={{ color: "rgba(255,255,255,0.66)" }}>
+              © 2026 Task Force Lawn Care, LLC. All rights reserved.
+            </Typography>
+            <Typography variant="body2" sx={{ color: "rgba(255,255,255,0.66)" }}>
+              Lawn care services for South Coast Massachusetts
+            </Typography>
+          </Container>
+        </Box>
       </Box>
     </Box>
   );
